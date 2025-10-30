@@ -1,6 +1,7 @@
 #include<iostream>
+#include<algorithm> 
 using namespace std;
-//Rotating matrix by 90 degree clockwise
+//Rotating matrix by 90 degree clockwise - complexity O(n^2)
 int main(){
     int arr[3][3]={{1,2,3},
                    {4,5,6},
@@ -27,7 +28,7 @@ int main(){
     }
 
     //Reverse each row
-    for(int i=0; i<3; i++){         //complexity O(n^2)
+    /*for(int i=0; i<3; i++){         //complexity O(n^2)
         int start = 0;
         int end = 2;
         while(start<end){
@@ -35,6 +36,10 @@ int main(){
             start++;
             end--;
         }
+    }*/
+   //using reverse function from algorithm header
+    for(int i=0; i<3; i++){         //complexity O(n^2)
+         reverse(arr[i], arr[i]+3);
     }
 
     cout<<"Rotated Matrix by 90 degree clockwise: "<<endl;
