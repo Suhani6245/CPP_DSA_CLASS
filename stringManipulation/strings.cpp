@@ -51,7 +51,6 @@ int main(){
     }
     cout << endl;
 
-    
     // Concatenation of strings
     string str1 = "Hello";
     string str2 = " World!";
