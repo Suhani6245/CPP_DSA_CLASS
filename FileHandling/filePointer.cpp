@@ -74,6 +74,39 @@ int main(){
     CountFile.close();
 
 
+    //Update a employee's salary having a specified id
+
+    /*int id;
+    cout<<"Enter ID to update salary: ";
+    cin>>id;*/
+
+    int id = 1;
+    fstream UpdateFile("employee.dat", ios::binary);         //fstream is used to do read and write both (in order)
+    Employee emp;
+    while(UpdateFile.read((char*)&emp, sizeof(emp))){
+        if(emp.id == id){
+            /*cout<<"Enter new salary: ";
+            int newSalary;
+            cin>>newSalary;
+            emp.salary = newSalary;**/
+
+            emp.salary = 50000;
+
+            //move the file pointer back to the position of this record
+            //UpdateFile.seekp(UpdateFile.tellg() - sizeof(emp));
+            UpdateFile.seekp(-sizeof(emp), ios :: cur);     //same work as above line
+
+            //write the updated record back to the file
+            UpdateFile.write((char*)&emp, sizeof(emp));
+            break;
+        }
+    }
+    
+    UpdateFile.close();
+
+
+
+
     return 0;
 
 
