@@ -88,7 +88,7 @@ int main(){
 }*/
 
 //hierarchical inheritance
-class Quadrilateral{
+/*class Quadrilateral{
     public:
     void show_sides(){
         cout<<"4 sides"<<endl;
@@ -114,5 +114,85 @@ int main(){
     Square s1;
     s1.show_sides();  //calls method from Quadrilateral class
     s1.show_shape();  //calls method from Square class
-}
+}*/
 
+
+//create a manager, employee inheritance
+/*class Employee{  //base class
+    public:
+    int id;
+    string name;
+    int salary;
+    void show(){
+        cout<<"Designation: "<<name<<", ";
+        cout<<"ID: "<<id<<", ";
+        cout<<"Salary: "<<salary<<endl;
+    }
+};
+class Manager:public Employee{   //derived class
+};
+
+int main(){
+    Employee e1;
+    e1.id = 100;
+    e1.name = "Employee";
+    e1.salary = 50000;
+    e1.show();  //calls Employee class method
+
+    Manager m1;
+    m1.id = 101;
+    m1.name = "Manager";
+    m1.salary = 80000;
+    m1.show();  //calls Manager class method
+}
+*/
+
+class Employee{
+    public:
+    int emp_id;
+    string name;
+    int salary;
+    string role;
+};
+
+class Manager: public Employee{
+    public:
+    int manager_id;
+    string team_name;
+    int team_size;
+};
+
+int main(){
+    Manager m1;
+    m1.emp_id = 1;
+    m1.name = "Alice";
+    m1.salary = 90000;
+    m1.role = "Project Manager";
+    m1.manager_id = 101;
+    m1.team_name = "Development";
+    m1.team_size = 10;
+
+    cout<<"Manager Details:"<<endl;
+    cout<<"Employee ID: "<<m1.emp_id<<endl;
+    cout<<"Name: "<<m1.name<<endl;
+    cout<<"Salary: "<<m1.salary<<endl;
+    cout<<"Role: "<<m1.role<<endl;
+    cout<<"Manager ID: "<<m1.manager_id<<endl;
+    cout<<"Team Name: "<<m1.team_name<<endl;
+    cout<<"Team Size: "<<m1.team_size<<endl;
+
+    Employee e1;
+    e1.emp_id = 2;
+    e1.name = "Bob";
+    e1.salary = 60000;
+    e1.role = "Developer";
+    cout<<"\nEmployee Details:"<<endl;
+    cout<<"Employee ID: "<<e1.emp_id<<endl; 
+    cout<<"Name: "<<e1.name<<endl;
+    cout<<"Salary: "<<e1.salary<<endl;
+    cout<<"Role: "<<e1.role<<endl;
+    
+
+    return 0;
+
+}
