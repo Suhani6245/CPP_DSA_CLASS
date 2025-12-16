@@ -55,11 +55,31 @@ public:
         cout << node->val << " ";
         inorder(node->right);
     }
+
+    void preorder(TreeNode* root) {
+        if (root == NULL)
+            return;
+
+        cout << root->val << " ";
+        preorder(root->left);
+        preorder(root->right);
+    }
+
+    void postorder(TreeNode* root) {
+        if (root == NULL)
+            return;
+
+        postorder(root->left);
+        postorder(root->right);
+        cout << root->val << " ";
+    }
+
+
 };
 
-// ==========================================================
+
 // Main Function
-// ==========================================================
+
 int main() {
     BST tree;
 
@@ -73,6 +93,14 @@ int main() {
     // Print tree (inorder gives sorted output)
     cout << "Inorder Traversal of BST: ";
     tree.inorder(tree.root);
+    cout<<endl;
+    cout << "Preorder Traversal of BST: ";
+    tree.preorder(tree.root);
+    cout<<endl;
+    cout << "Post order Traversal of BST: ";
+    tree.postorder(tree.root);
+    cout<<endl;
+
 
     return 0;
 }

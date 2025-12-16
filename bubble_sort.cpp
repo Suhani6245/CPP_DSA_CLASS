@@ -45,6 +45,21 @@ int main(){
         }
   }
 
+
+  /*for (int i = 0; i < n - 1; i++) {
+        swapped = false;
+        // The last 'i' elements are already in place (sorted)
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+        // If no two elements were swapped by inner loop, then the array 
+        // is already sorted, and we can break.
+        if (!swapped)
+            break;
+    }*/
   
     cout<<endl<<"SORTED ARRAY :"<< endl;
     for(int i=0; i<n; i++){
