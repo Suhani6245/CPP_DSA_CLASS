@@ -13,9 +13,9 @@ void no_leak(){
     delete p;
     //no leak
 }
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Rule: every new -> exactly one delete
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //2. missing virtual destructor
 class Base{
     public:
