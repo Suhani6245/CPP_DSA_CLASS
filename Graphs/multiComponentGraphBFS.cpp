@@ -3,14 +3,13 @@
 #include<queue>
 using namespace std;
 
+
 //t.c = O(V + E) and s.c = O(V)
-void bfs(vector<vector<int>>&adj, int source){
+void bfs(vector<vector<int>>&adj, int source, vector<bool>& visited){
     int v = adj.size();
-    vector<bool> visited(v, false);
     queue<int> q;
     q.push(source);
     visited[source] = true;
-    cout<<"BFS traversal with source node "<<source<<" -> ";
     while(!q.empty()){
         int node = q.front();
         q.pop();
@@ -27,16 +26,24 @@ void bfs(vector<vector<int>>&adj, int source){
 
 int main(){
     int v = 5;
+    vector<bool> visited(v, false);
     vector<vector<int>> adj;   //graph represented as an adjacency list
     // Adding edges to the graph
-    adj.push_back({1,2});
-    adj.push_back({0,4});
-    adj.push_back({0,3});
-    adj.push_back({2,4});
-    adj.push_back({1,3});
+    adj.push_back({1,2});  //component 1
+    adj.push_back({0,2});  //component 1
+    adj.push_back({0,1});  //component 1
+    adj.push_back({4});   //component 2
+    adj.push_back({3});   //component 2
+    
+    int component = 0;
+    for(int i=0; i<v; i++){
+        if(!visited[i]){
+            bfs(adj, i, visited);
+            component++;
+        }
+    }
 
-    bfs(adj, 0);
-    cout<<endl;
-    bfs(adj, 2);
+    cout<<endl<<"Number of components in the graph: "<<component<<endl;
+
     return 0;
 }
