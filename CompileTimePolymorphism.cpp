@@ -63,7 +63,7 @@ class Derived : public Base{
 int main(){
     Base* b = new Derived();    //new is used for dynamic allocation and hence stored in pointer
     Derived* d = new Derived();
-    b->show();
-    d->show();  //the show function of Base class is called because the pointer is of Base class type
+    b->show();  
+    d->show();  //the show function of Base class is called because the pointer is of Base class type 
     return 0;
 }
