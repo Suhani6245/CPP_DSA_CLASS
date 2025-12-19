@@ -43,7 +43,7 @@ int main(){
 
 //Problem statement: create a functionality that calculates area of different shapes
 
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 class Shape {
@@ -106,4 +106,73 @@ int main() {
     delete s3;
 
     return 0;
+}*/
+
+//design a  game having different characters, each character has 2 moves - attack, defend
+#include<iostream>
+using namespace std;
+
+class Character{
+    public:
+    virtual void attack() = 0;
+    virtual void defend() = 0;
+};
+
+class char1: public Character{
+    public:
+    
+
+    void attack(){
+        cout<<"Char 1 attacked!\n";
+    }
+
+    void defend(){
+        cout<<"Char 1 defended!\n";
+    }
+};
+
+class char2: public Character{
+    public:
+    
+
+    void attack(){
+        cout<<"Char 2 attacked!\n";
+    }
+
+    void defend(){
+        cout<<"Char 2 defended!\n";
+    }
+
+    
+};
+
+class char3: public Character{
+    public:
+    
+
+    void attack(){
+        cout<<"Char 3 attacked!\n";
+    }
+
+    void defend(){
+        cout<<"Char 3 defended!\n";
+    }
+  
+};
+
+int main(){
+    Character* c1 = new char1;
+    Character* c2 = new char2;
+    Character* c3 = new char3;
+
+    c1->attack();
+    c2->defend();
+    c3->defend();
+
+    delete c1;
+    delete c2;
+    delete c3;
+
+    return 0;
+    
 }
