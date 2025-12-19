@@ -6,9 +6,9 @@
 #include<queue> 
 using namespace std;
 
-int shortestDistace(int source, int dest, vector<vector<int>>&adj){
+int shortestDistace(int source, int dest, vector<vector<int>>&adj){       //using bfs
     int v = adj.size();
-    vector<bool>vis(v,false);
+    vector<bool>vis(v,false);    //visited array
     queue<pair<int,int>>q;
     q.push({source,0});
     vis[source] = true;
