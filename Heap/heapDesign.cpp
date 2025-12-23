@@ -19,7 +19,7 @@ class Heap{
             else break;
         }
     }
-    
+
     void heapifyDown(int i){ //up to bottom
         int n=heapArr.size()-1;
         while(2*i<=n){
@@ -68,7 +68,6 @@ class Heap{
         if(isEmpty()) return -1;
         return heapArr[1];
     }
-
 
 
 };
